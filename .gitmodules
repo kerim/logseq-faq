@@ -1,4 +1,4 @@
 [submodule "builder"]
 	path = builder
-	url = https://github.com/kerim/garden.git
+	url = https://github.com/kerim/logseq-static-garden.git
 	branch = kerim-theme
