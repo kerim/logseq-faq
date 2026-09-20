@@ -1,0 +1,17 @@
+{
+  "title": "Unofficial Logseq FAQ",
+  "home_page": "Unofficial Logseq FAQ",
+  "description": "An unofficial FAQ for Logseq DB",
+  "url": "https://kerim.github.io/logseq-faq",
+  "base_path": "/logseq-faq",
+  "language": "en",
+  "navigation": [],
+  "navigation_page": "Topics",
+  "navigation_label": "Topics",
+  "embed_style": "inline",
+  "url_style": "sections",
+  "author": "P. Kerim Friedman",
+  "license": "CC BY 4.0",
+  "theme_css": "theme.css",
+  "exclude_pages": ["Logseq DB Unofficial FAQ"]
+}
