@@ -74,18 +74,23 @@ Then either:
 - Install the watcher so it happens automatically:
 
   ```sh
-  launchctl bootstrap gui/$(id -u) ~/Code/logseq-faq/watch/net.oxus.logseq-faq-publish.plist
+  ~/Code/logseq-faq/watch/install.sh
   ```
+
+  It compiles a small launcher (needs `clang`, from the Xcode Command Line
+  Tools), links the job into `~/Library/LaunchAgents` so it survives
+  restarts, and loads it. Re-run it after changing anything in `watch/`.
 
   If your clone is **not** at `~/Code/logseq-faq`, first edit the paths in
   `watch/net.oxus.logseq-faq-publish.plist` (the `ProgramArguments` and
-  `WatchPaths` entries) and `watch/logseq-faq-publish` (the `REPO_DIR`
+  `WatchPaths` entries) and `watch/logseq-faq-publish.sh` (the `REPO_DIR`
   variable) to match your clone's location.
 
   To remove the watcher later:
 
   ```sh
-  launchctl bootout gui/$(id -u) ~/Code/logseq-faq/watch/net.oxus.logseq-faq-publish.plist
+  launchctl bootout gui/$(id -u)/net.oxus.logseq-faq-publish
+  rm ~/Library/LaunchAgents/net.oxus.logseq-faq-publish.plist
   ```
 
 A collaborator needs **write access to the GitHub repo** (so `publish.sh`

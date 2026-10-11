@@ -6,8 +6,13 @@
 	<string>net.oxus.logseq-faq-publish</string>
 
 	<key>ProgramArguments</key>
+	<!-- The first entry is a compiled launcher (watch/install.sh builds it):
+	     macOS will not run a script directly here, and names the job in
+	     Login Items after this file. It runs the bash line below unchanged. -->
 	<array>
-		<string>/Users/niyaro/Code/logseq-faq/watch/logseq-faq-publish</string>
+		<string>/Users/niyaro/Code/logseq-faq/watch/bin/logseq-faq-publish</string>
+		<string>/bin/bash</string>
+		<string>/Users/niyaro/Code/logseq-faq/watch/logseq-faq-publish.sh</string>
 	</array>
 
 	<key>WatchPaths</key>

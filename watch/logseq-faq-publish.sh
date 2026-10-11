@@ -28,14 +28,16 @@ if [[ ! -f "$INDEX_FILE" ]]; then
   exit 0
 fi
 
-now=$(date +%s)
-mtime=$(stat -f %m "$INDEX_FILE")
-age=$(( now - mtime ))
-
-if (( age < 15 )); then
-  log "export still being written (index.html age ${age}s < 15s), exiting; next trigger will handle it"
-  exit 0
-fi
+# Wait for the export to settle instead of exiting and counting on another
+# trigger: launchd does not fire again for changes made while this is running.
+while :; do
+  now=$(date +%s)
+  mtime=$(stat -f %m "$INDEX_FILE")
+  age=$(( now - mtime ))
+  (( age >= 15 )) && break
+  log "export still being written (index.html age ${age}s < 15s), waiting"
+  sleep 10
+done
 
 log "export looks settled (index.html age ${age}s), publishing"
 
