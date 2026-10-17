@@ -13,5 +13,6 @@
   "author": "P. Kerim Friedman",
   "license": "CC BY 4.0",
   "theme_css": "theme.css",
-  "exclude_pages": ["Logseq DB Unofficial FAQ"]
+  "exclude_pages": ["Logseq DB Unofficial FAQ"],
+  "hidden_properties_page": "Hidden Properties"
 }
